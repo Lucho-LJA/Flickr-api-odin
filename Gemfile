@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 gem 'flickr', '~> 2.0', '>= 2.0.2'
 gem 'figaro', '~> 1.2'
+gem 'bulma-rails', '~> 0.9.3'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

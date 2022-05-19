@@ -1,0 +1,44 @@
+<section class="section">
+    <div class="container">
+        <div class="title is-2">
+            <div class="box">
+            <%= form_with url: image_page_index_path, method: :get do |f| %>
+                <%= f.hidden_field :id_aux, value: @id_aux %>
+                <div class="box-search">
+                    
+                        <div class="media-content">
+                            <div class="field">
+                                <div class="control">
+                                    <%= f.label :id, "Search Id:" %>
+                                    <%= f.text_field :id,requride: true, placehold: "Put a ID of Flickr" %>
+                                </div>
+                            </div>
+                        </div>  
+                    
+                    
+                        <div class="media-content">
+                            <div class="field">
+                                <div class="control">
+                                    <%= f.submit "Search", class: "button is-info" %>
+                                </div>
+                            </div>
+                        </div> 
+                </div>
+            <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <% @photos.each do |photo| %>
+            <div class="media-content">
+                <figure class="image is-128x128">
+                    <%= link_to(image_tag(Flickr.url_q(photo)), Flickr.url_photopage(photo)) %>
+                </figure>
+            </div>
+        <% end %>
+        
+
+    </div>
+</section>
